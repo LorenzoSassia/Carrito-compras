@@ -6,5 +6,18 @@
  <div class="cart-item" *ngFor="let item of items">
     <span>{{ item.name }}</span>
     <span>{{ item.price | currency }}</span>
-
+   
  </div>
+
+ <form [formGroup]="checkOutForm" (ngSubmit)="onSubmit()">
+   <div>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" formControlName="nombre">
+   </div>
+
+   <div>
+      <label for="direccion">Direccion</label>
+      <input type="text" id="direccion" formControlName="direccion">
+   </div>
+   <button class="button" type="submit">Enviar</button>
+ </form>
